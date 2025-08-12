@@ -7,6 +7,10 @@ Este é um projeto simples de API construído com Node.js e TypeScript.
 
 ## Instalação
 Para instalar as dependências do projeto, execute:
+`npm i`
+
+## Execução
+Para executar o projeto, execute:
 `npm run dev`
 
 ## Arquitetura de pastas
