@@ -45,30 +45,49 @@ Para executar o projeto, execute:
 
 ## Arquitetura de pastas
 ```text
-├── .gitignore
-├── README.md
-├── docker-compose.yml
-├── drizzle.config.ts
-├── drizzle/
+├── .biomeignore                    # Arquivos ignorados pelo Biome.js
+├── .editorconfig                   # Configurações do editor
+├── .gitignore                      # Arquivos ignorados pelo Git
+├── README.md                       # Documentação do projeto
+├── biome.json                      # Configuração do Biome.js (linting/formatação)
+├── docker-compose.yml              # Configuração do PostgreSQL
+├── drizzle.config.ts               # Configuração do Drizzle ORM
+├── drizzle/                        # Migrações do banco de dados
 │   ├── 0000_thankful_lizard.sql
 │   ├── 0001_pink_bloodaxe.sql
-│   └── meta/
+│   ├── 0002_breezy_corsair.sql
+│   ├── 0003_white_echo.sql
+│   ├── 0004_absurd_madame_web.sql
+│   ├── 0005_special_morgan_stark.sql
+│   └── meta/                       # Metadados das migrações
 │       ├── 0000_snapshot.json
 │       ├── 0001_snapshot.json
+│       ├── 0002_snapshot.json
+│       ├── 0003_snapshot.json
+│       ├── 0004_snapshot.json
+│       ├── 0005_snapshot.json
 │       └── _journal.json
-├── package-lock.json
-├── package.json
-├── requisicoes.http
-├── server.ts
-├── src/
-│   ├── database/
-│   │   ├── client.ts
-│   │   └── schema.ts
-│   └── routes/
-│       ├── create-course.ts
-│       ├── get-course-by-id.ts
-│       └── get-courses.ts
-└── tsconfig.json
+├── package-lock.json               # Lock das dependências
+├── package.json                    # Dependências e scripts
+├── requisicoes.http                # Arquivo para testar APIs (REST Client)
+├── src/                            # Código fonte da aplicação
+│   ├── app.ts                      # Configuração principal do Fastify
+│   ├── database/                   # Configurações do banco de dados
+│   │   ├── client.ts               # Cliente do banco (Drizzle)
+│   │   ├── schema.ts               # Schema das tabelas
+│   │   └── seed.ts                 # Dados iniciais do banco
+│   ├── routes/                     # Rotas da API
+│   │   ├── create-course.test.ts   # Testes da rota de criação
+│   │   ├── create-course.ts        # Rota para criar curso
+│   │   ├── get-course-by-id.test.ts # Testes da rota de busca por ID
+│   │   ├── get-course-by-id.ts     # Rota para buscar curso por ID
+│   │   ├── get-courses.test.ts     # Testes da rota de listagem
+│   │   └── get-courses.ts          # Rota para listar cursos
+│   ├── server.ts                   # Servidor principal
+│   └── tests/                      # Utilitários para testes
+│       └── factories/              # Factories para criar dados de teste
+├── tsconfig.json                   # Configuração do TypeScript
+└── vitest.config.ts                # Configuração do Vitest (testes)
 ```
 
 ## Comandos executados
@@ -78,13 +97,20 @@ Para executar o projeto, execute:
 - `npm i pino-pretty` // Instalar o pino-pretty para logs
 - `npm i drizzle-orm pg` // Instalar Drizzle ORM e PostgreSQL
 - `npm i drizzle-kit -D` // Instalar Drizzle Kit para migrações
+- `npm i @types/pg -D` // Instalar tipos do PostgreSQL
 - `npm i zod fastify-type-provider-zod` // Instalar Zod para validação
 - `npm i @fastify/swagger @fastify/swagger-ui @scalar/fastify-api-reference` // Instalar documentação da API
+- `npm i @biomejs/biome -D` // Instalar Biome.js para linting e formatação
+- `npm i vitest @vitest/coverage-v8 -D` // Instalar Vitest para testes
+- `npm i supertest @types/supertest -D` // Instalar Supertest para testes de API
+- `npm i @faker-js/faker -D` // Instalar Faker.js para dados de teste
+- `npm i dotenv-cli -D` // Instalar dotenv-cli para variáveis de ambiente em testes
 
 ## Comandos disponíveis
 
 ### Desenvolvimento
 - `npm run dev` // Executar o servidor em modo de desenvolvimento
+- `npm run db:seed` // Popular o banco de dados com dados de exemplo
 
 ### Docker (Banco de dados)
 - `docker-compose up -d` // Iniciar o banco PostgreSQL em background
@@ -92,11 +118,24 @@ Para executar o projeto, execute:
 - `docker-compose logs db` // Ver logs do banco de dados
 - `docker ps` // Mostrar containers Docker em execução
 
-
 ### Banco de dados (Drizzle)
 - `npm run db:generate` // Gerar migrações baseadas no schema
 - `npm run db:migrate` // Executar migrações no banco
 - `npm run db:studio` // Abrir interface visual do banco (Drizzle Studio)
 
+### Linting e Formatação (Biome.js)
+- `npm run lint` // Verificar problemas de linting
+- `npm run lint:fix` // Corrigir problemas de linting automaticamente
+- `npm run format` // Verificar formatação do código
+- `npm run format:fix` // Formatar código automaticamente
+- `npm run check` // Executar linting e formatação juntos
+- `npm run check:fix` // Corrigir linting e formatação automaticamente
+
+### Testes
+- `npm run test` // Executar todos os testes com cobertura
+- `npm run pretest` // Executar migrações no banco de teste (executado automaticamente antes dos testes)
+
 ## Extensões recomendadas
-- `REST Client`
+- **REST Client** - Para testar APIs diretamente no VS Code
+- **Biome** - Linting e formatação rápida para TypeScript/JavaScript
+- **TypeScript Importer** - Auto-import para TypeScript
