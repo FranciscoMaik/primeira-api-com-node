@@ -21,6 +21,7 @@ export const getCourseByIdRoute: FastifyPluginAsyncZod = async (server) => {
 								.object({
 									id: z.uuid(),
 									title: z.string(),
+									description: z.string().nullable(),
 								})
 								.describe("Course found"),
 						})
