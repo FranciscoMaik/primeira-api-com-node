@@ -88,7 +88,7 @@ Para executar o projeto, execute:
 
 ### Docker (Banco de dados)
 - `docker-compose up -d` // Iniciar o banco PostgreSQL em background
-- `docker-compose down` // Parar o banco de dados
+- `docker-compose stop` // Parar o docker
 - `docker-compose logs db` // Ver logs do banco de dados
 - `docker ps` // Mostrar containers Docker em execução
 
