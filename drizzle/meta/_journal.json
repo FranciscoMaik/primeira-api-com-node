@@ -15,6 +15,34 @@
       "when": 1755094889076,
       "tag": "0001_pink_bloodaxe",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1755179729110,
+      "tag": "0002_breezy_corsair",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1755179870187,
+      "tag": "0003_white_echo",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1755181088138,
+      "tag": "0004_absurd_madame_web",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1755181986583,
+      "tag": "0005_special_morgan_stark",
+      "breakpoints": true
     }
   ]
 }
