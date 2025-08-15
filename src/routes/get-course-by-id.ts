@@ -1,13 +1,16 @@
+import { eq } from "drizzle-orm";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
+import z from "zod";
 import { db } from "../database/client.ts";
 import { courses } from "../database/schema.ts";
-import z from "zod";
-import { eq } from "drizzle-orm";
+import { getAuthenticatedUser } from "../utils/get-authenticated-user.ts";
+import { checkRequestJwt } from "./hooks/check-request-jwt.ts";
 
 export const getCourseByIdRoute: FastifyPluginAsyncZod = async (server) => {
 	server.get(
 		"/courses/:id",
 		{
+			preHandler: [checkRequestJwt],
 			schema: {
 				tags: ["Courses"],
 				summary: "Get a course by id",
@@ -35,6 +38,8 @@ export const getCourseByIdRoute: FastifyPluginAsyncZod = async (server) => {
 			},
 		},
 		async (request, reply) => {
+			const user = getAuthenticatedUser(request);
+
 			const { id } = request.params;
 
 			const result = await db.select().from(courses).where(eq(courses.id, id));
