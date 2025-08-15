@@ -1,12 +1,23 @@
 POST http://localhost:3333/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjZmY1NTEyZS0zYTRmLTRjNmItOTVkZi1iOWU3YTM0ODJmNjgiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTI3MjMwM30.2I2Nt-RS1Yl_i-11zMjl6K2QUmSA5zXpMe07LSqWGLg
 
 {
-    "title": "Cur"
+    "title": "Curso de React"
 }
 
 ###
 GET http://localhost:3333/courses
 
 ###
-GET http://localhost:3333/courses/67c97904-6879-4073-8534-3031314dd913
+GET http://localhost:3333/courses/282b45ae-dbba-46ac-b92d-c30d1d49f3ec
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjZmY1NTEyZS0zYTRmLTRjNmItOTVkZi1iOWU3YTM0ODJmNjgiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTI3MjMwM30.2I2Nt-RS1Yl_i-11zMjl6K2QUmSA5zXpMe07LSqWGLg
+
+###
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+    "email": "Silas_Costa82@yahoo.com",
+    "password": "123456"
+}
