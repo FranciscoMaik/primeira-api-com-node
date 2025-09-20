@@ -1,9 +1,11 @@
 # Primeiro Projeto de API
+
 Este é um projeto simples de API construído com Node.js e TypeScript.
 
 ## Tecnologias Utilizadas
 
 ### Backend
+
 - **Node.js** - Runtime JavaScript
 - **TypeScript** - Superset do JavaScript com tipagem estática
 - **Fastify** - Framework web rápido e eficiente
@@ -11,39 +13,47 @@ Este é um projeto simples de API construído com Node.js e TypeScript.
 - **fastify-type-provider-zod** - Integração do Zod com Fastify
 
 ### Banco de Dados
+
 - **PostgreSQL** - Sistema de gerenciamento de banco de dados relacional
 - **Drizzle ORM** - ORM TypeScript-first para SQL
 - **Drizzle Kit** - Ferramenta CLI para migrações e introspection
 - **pg** - Driver PostgreSQL para Node.js
 
 ### Documentação da API
+
 - **@fastify/swagger** - Geração automática de documentação Swagger/OpenAPI
 - **@fastify/swagger-ui** - Interface web para documentação Swagger
 - **@scalar/fastify-api-reference** - Interface moderna para documentação da API
 
 ### Desenvolvimento
+
 - **Docker** - Containerização do banco de dados
 - **pino-pretty** - Formatação de logs para desenvolvimento
 - **REST Client** - Extensão do VS Code para testar APIs
 
 ### Ferramentas de Build
+
 - **npm** - Gerenciador de pacotes
 - **TypeScript Compiler** - Compilador TypeScript
 
 ## Pré-requisitos
+
 - Node.js (v22 or higher)
 - npm (v10 or higher)
 - Docker (para o banco de dados)
 
 ## Instalação
+
 Para instalar as dependências do projeto, execute:
 `npm i`
 
 ## Execução
+
 Para executar o projeto, execute:
 `npm run dev`
 
 ## Arquitetura de pastas
+
 ```text
 ├── .biomeignore                    # Arquivos ignorados pelo Biome.js
 ├── .editorconfig                   # Configurações do editor
@@ -91,7 +101,8 @@ Para executar o projeto, execute:
 ```
 
 ## Comandos executados
-- `npm i typescript @types/node -D`  // Instalar TypeScript e seus tipos
+
+- `npm i typescript @types/node -D` // Instalar TypeScript e seus tipos
 - `npx tsc --init` // Inicializar o arquivo tsconfig.json
 - `npm i fastify` // Instalar o Fastify
 - `npm i pino-pretty` // Instalar o pino-pretty para logs
@@ -109,21 +120,25 @@ Para executar o projeto, execute:
 ## Comandos disponíveis
 
 ### Desenvolvimento
+
 - `npm run dev` // Executar o servidor em modo de desenvolvimento
 - `npm run db:seed` // Popular o banco de dados com dados de exemplo
 
 ### Docker (Banco de dados)
+
 - `docker-compose up -d` // Iniciar o banco PostgreSQL em background
 - `docker-compose stop` // Parar o docker
 - `docker-compose logs db` // Ver logs do banco de dados
 - `docker ps` // Mostrar containers Docker em execução
 
 ### Banco de dados (Drizzle)
+
 - `npm run db:generate` // Gerar migrações baseadas no schema
 - `npm run db:migrate` // Executar migrações no banco
 - `npm run db:studio` // Abrir interface visual do banco (Drizzle Studio)
 
 ### Linting e Formatação (Biome.js)
+
 - `npm run lint` // Verificar problemas de linting
 - `npm run lint:fix` // Corrigir problemas de linting automaticamente
 - `npm run format` // Verificar formatação do código
@@ -132,10 +147,14 @@ Para executar o projeto, execute:
 - `npm run check:fix` // Corrigir linting e formatação automaticamente
 
 ### Testes
+
 - `npm run test` // Executar todos os testes com cobertura
 - `npm run pretest` // Executar migrações no banco de teste (executado automaticamente antes dos testes)
 
 ## Extensões recomendadas
+
 - **REST Client** - Para testar APIs diretamente no VS Code
 - **Biome** - Linting e formatação rápida para TypeScript/JavaScript
 - **TypeScript Importer** - Auto-import para TypeScript
+
+## Licensa
