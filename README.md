@@ -158,3 +158,5 @@ Para executar o projeto, execute:
 - **TypeScript Importer** - Auto-import para TypeScript
 
 ## Licensa
+
+@FranciscoMaik
